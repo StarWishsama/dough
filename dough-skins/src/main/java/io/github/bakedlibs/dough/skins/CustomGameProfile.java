@@ -1,5 +1,6 @@
 package io.github.bakedlibs.dough.skins;
 
+import org.bukkit.Bukkit;
 import com.mojang.authlib.GameProfile;
 import com.mojang.authlib.properties.Property;
 import io.github.bakedlibs.dough.reflection.ReflectionUtils;
@@ -8,6 +9,8 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import org.bukkit.Bukkit;
 import org.bukkit.inventory.meta.SkullMeta;
+import io.github.bakedlibs.dough.versions.MinecraftVersion;
+import io.github.bakedlibs.dough.versions.UnknownServerVersionException;
 
 final class CustomGameProfile extends GameProfile {
 
@@ -30,7 +33,7 @@ final class CustomGameProfile extends GameProfile {
         }
     }
 
-    void apply(@Nonnull SkullMeta meta) throws NoSuchFieldException, IllegalAccessException {
+    void apply(@Nonnull SkullMeta meta) throws NoSuchFieldException, IllegalAccessException, UnknownServerVersionException {
         ReflectionUtils.setFieldValue(meta, "profile", this);
 
         // Forces SkullMeta to properly deserialize and serialize the profile
