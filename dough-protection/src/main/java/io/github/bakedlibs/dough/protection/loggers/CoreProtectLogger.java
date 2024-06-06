@@ -33,9 +33,7 @@ public class CoreProtectLogger implements ProtectionLogger {
             case BREAK_BLOCK:
                 coreprotect.logRemoval(p.getName(), b.getLocation(), b.getType(), b.getBlockData());
                 break;
-            case PLACE_BLOCK:
-                coreprotect.logPlacement(p.getName(), b.getLocation(), b.getType(), b.getBlockData());
-                break;
+            //fix SlimefunGuguProject/Slimefun#892
             default:
                 break;
         }
