@@ -5,7 +5,7 @@ import cn.lunadeer.dominion.api.dtos.DominionDTO;
 import cn.lunadeer.dominion.api.dtos.flag.EnvFlag;
 import cn.lunadeer.dominion.api.dtos.flag.Flag;
 import cn.lunadeer.dominion.api.dtos.flag.Flags;
-import cn.lunadeer.dominion.api.dtos.flag.PreFlag;
+import cn.lunadeer.dominion.api.dtos.flag.PriFlag;
 import io.github.bakedlibs.dough.protection.Interaction;
 import io.github.bakedlibs.dough.protection.ProtectionModule;
 import org.bukkit.Location;
@@ -69,9 +69,12 @@ public class DominionProtectionModule implements ProtectionModule {
         if (flag == null) {
             return true;
         }
-        DominionDTO dominion = api.getDominionByLoc(l);
-        if (flag instanceof PreFlag) {
-            PreFlag preFlag = (PreFlag) flag;
+        DominionDTO dominion = api.getDominion(l);
+        if (dominion == null) {
+            return true;
+        }
+        if (flag instanceof PriFlag) {
+            PriFlag preFlag = (PriFlag) flag;
             return api.checkPrivilegeFlag(dominion, preFlag, player);
         } else {
             EnvFlag envFlag = (EnvFlag) flag;
