@@ -91,7 +91,7 @@ public class DominionProtectionModule implements ProtectionModule {
             case INTERACT_BLOCK:
                 return Flags.CONTAINER;
             case ATTACK_PLAYER:
-                return Flags.PLAYER_DAMAGE;
+                return Flags.PVP;
             default:
                 return null;
         }
