@@ -22,6 +22,7 @@ import io.github.bakedlibs.dough.protection.modules.BentoBoxProtectionModule;
 import io.github.bakedlibs.dough.protection.modules.BlockLockerProtectionModule;
 import io.github.bakedlibs.dough.protection.modules.BoltProtectionModule;
 import io.github.bakedlibs.dough.protection.modules.ChestProtectProtectionModule;
+import io.github.bakedlibs.dough.protection.modules.DominionProtectionModule;
 import io.github.bakedlibs.dough.protection.modules.FactionsUUIDProtectionModule;
 import io.github.bakedlibs.dough.protection.modules.FunnyGuildsProtectionModule;
 import io.github.bakedlibs.dough.protection.modules.GriefPreventionProtectionModule;
@@ -97,6 +98,7 @@ public final class ProtectionManager {
         registerModule(pm, "ShopChest", shopChest -> new ShopChestProtectionModule(shopChest));
         registerModule(pm, "HuskClaims", huskClaims -> new HuskClaimsProtectionModule(huskClaims));
         registerModule(pm, "Bolt", bolt -> new BoltProtectionModule(bolt));
+        registerModule(pm, "Dominion", dominion -> new DominionProtectionModule(dominion));
 
         /*
          * The following Plugins work by utilising one of the above listed
