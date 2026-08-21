@@ -444,7 +444,7 @@
         <dependency>
             <groupId>cn.lunadeer</groupId>
             <artifactId>DominionAPI</artifactId>
-            <version>4.6.0</version>
+            <version>4.9.6</version>
             <scope>provided</scope>
             <exclusions>
                 <exclusion>
